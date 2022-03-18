@@ -1,7 +1,6 @@
 def sum_n(n):
-
-    print('1부터 {}까지의 합은 {}이다.' .format(n, n*(n+1)/2))
+    return n*(n+1)/2
 
 if __name__ == '__main__':
     n = int(input('n: '))
-    sum_n(n)
+    print(('1부터 {}까지의 합은 {}이다.' .format(n, sum_n(n)))
