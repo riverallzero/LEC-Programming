@@ -1,5 +1,4 @@
 def c2f(t_c):
-
     return (t_c*1.8) + 32
 
 if __name__ == '__main__':
