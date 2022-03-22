@@ -1,0 +1,4 @@
+#def 함수()에 계산식  
+#def main() 함수에 input 넣기
+#if__name__ == '__main__': 
+#   main() 함수를 다 쓰면 함수 다른거 넣지 않기
