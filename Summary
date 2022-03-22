@@ -6,4 +6,5 @@
 #   main() 함수를 다 쓰면 함수 다른거 넣지 않기
 
 #def 함수에서 return값이 있어야 main 함수에서 print 가능, return값이 없다면 그냥 함수 호출 
+#하지만 return을 해야 import할 때 정확하게 실행됨
 #import할 때 def 함수():가 불러와지기 때문에 def main()과 if __name__ == '__main__'은 상관 없음
