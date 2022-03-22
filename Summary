@@ -12,3 +12,12 @@
 
 #def largest(num):
     return max(num)
+    
+    밑의 식과 같음
+
+max_num = -1
+for n in num:
+    if max_num < n:
+         max_num = n
+    return max_num
+-> num = [3, 7, 5, 10, 15] 일때 리스트 -1번인 3을 max_num으로 정하고 뒤의 숫자와 비교하며 더 큰 숫자를 max_num으로 지정하며 값을 찾음
