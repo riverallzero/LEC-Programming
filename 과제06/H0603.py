@@ -9,7 +9,10 @@ def is_leap_year(y):
     
 def main():
     y = int(input('연도: '))
-    print('{} 년 윤년 여부 = {}' .format(y, is_leap_year(y)))
-
+    if is_leap_year(y):
+        print('윤년이 맞습니다.')
+    else:
+        print('윤년이 아닙니다.')
+        
 if __name__ == '__main__':
     main()
