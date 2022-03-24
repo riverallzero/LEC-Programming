@@ -24,6 +24,7 @@ def is_leap_year(y):
 
 def main():
     y = int(input('연도: '))
+    print(is_leap_year(y))
     if is_leap_year(y):
         print('윤년이 맞습니다.')
     else:
