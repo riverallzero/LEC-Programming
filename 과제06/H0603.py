@@ -24,7 +24,7 @@ def is_leap_year(y):
 
 def main():
     y = int(input('연도: '))
-    is_leap_year(y)
+    print('윤년 결과는 {}' .format(is_leap_year(y)))
 
 if __name__ == '__main__':
     main()
