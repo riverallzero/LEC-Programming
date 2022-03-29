@@ -18,7 +18,7 @@ def main():
 
 # 파일로 input 불러오기
 #     f = open('파일이름.txt')
-#     input_text = f.readline() #input_text 덮어서 파일 데이터로 불러옴
+#     input_text = f.readline().strip() #input_text 덮어서 파일 데이터로 불러옴
 #     print('!{}!'. format(input_text))
 
     nums = list(map(int, text2list(input_text.split())))       
