@@ -5,3 +5,6 @@ for i, hw in enumerats(hw_list) #순서 파악 가능
     print('average: ' , hw.average(number_list)
 = for hw in hw_list #한개 돌릴 때 가능
 
+1. nums = nums[:]
+   nums.sort() # 넘겨받은 데이터가 변경
+2. nums = sorted(nums) # print때만 데이터가 변경
