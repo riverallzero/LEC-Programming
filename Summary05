@@ -10,3 +10,10 @@ for i, hw in enumerats(hw_list) # 여러개 돌릴 때 순서 파악 가능
 2. nums = sorted(nums) # print때만 데이터가 변경
 
 과제08 main함수만 사용하면 됨
+
+# 파일 여러줄 불러오기
+f = open('numbers.1.txt')
+    lines = f.readlines()
+    print(lines)
+    nums = [int(x.strip()) for x in lines]
+    print(nums)
