@@ -1,9 +1,9 @@
-for i, hw in enumerats(hw_list) #순서 파악 가능
+for i, hw in enumerats(hw_list) # 여러개 돌릴 때 순서 파악 가능
     print(hw.average.__module__)
     input_text = '1 3 5 7'
     number_list = hw.text2list(input_text)
     print('average: ' , hw.average(number_list)
-= for hw in hw_list #한개 돌릴 때 가능
+= for hw in hw_list # 한개 돌릴 때 가능
 
 1. nums = nums[:]
    nums.sort() # 넘겨받은 데이터가 변경
