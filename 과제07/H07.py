@@ -1,5 +1,6 @@
 def text2list(nums):
     return list(nums)
+#return [int(x) for x in text_input.split()]
 
 def average(nums):
     return sum(nums) / len(nums)
