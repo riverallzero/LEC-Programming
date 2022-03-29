@@ -8,3 +8,5 @@ for i, hw in enumerats(hw_list) # 여러개 돌릴 때 순서 파악 가능
 1. nums = nums[:]
    nums.sort() # 넘겨받은 데이터가 변경
 2. nums = sorted(nums) # print때만 데이터가 변경
+
+과제08 main함수만 사용하면 됨
