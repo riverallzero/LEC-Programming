@@ -1,6 +1,7 @@
 def main():
     f = open('number.txt')
     lines = f.readlines()
+    str(lines).strip()
     remove = {'\n'}
     nums = [int(x) for x in lines if x not in remove]
 
