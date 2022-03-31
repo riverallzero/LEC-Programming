@@ -69,7 +69,7 @@ def main():
     print('최장연속강우일수: {:d} 일' .format(longest_rain_days(rainfall)))
     print('강우이벤트 중 최대 강수량: {:.1f} mm' .format(maximum_rainfall_event(rainfall)))
     print('일교차가 가장 큰 날짜, 해당일자의 일교차: {}, {:.1f}' .format((maximum_temp_gap(dates, tmax, tmin)[0]), (maximum_temp_gap(dates, tmax, tmin)[1])))
-    print('5월부터 9월까지 적산온도: {:.1f}' .format(gdd(dates, tavg)))
+    print('5월부터 9월까지 적산온도: {:.1f} degree-day' .format(gdd(dates, tavg)))
 
 if __name__ == '__main__':
     main()
