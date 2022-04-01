@@ -22,16 +22,31 @@ def longest_rain_days(rainfall):
         else:
             if rain_day > 0:
                 rain_day_list.append(rain_day)
+            rain_day = 0
     if rain_day > 0:
         rain_day_list.append(rain_day)
     return max(rain_day_list)
 
 def maximum_rainfall_event(rainfall):
-    max_rain = []
-    for x in rainfall:
-        if x > 0:
-            max_rain.append(x)
-    return max(max_rain)
+    rain_day = 0
+    rain_total = 0
+    rain_day_list = []
+    rain_total_list = []
+
+    for rain in rainfall:
+        if rain > 0:
+            rain_day += 1
+            rain_total += rain
+        else:
+            if rain_day > 0:
+                rain_day_list.append(rain_day)
+                rain_total_list.append(rain_total)
+            rain_day = 0
+    if rain_day > 0:
+        rain_day_list.append(rain_day)
+        rain_total_list.append(rain_total)
+
+    return max(rain_total_list)
 
 def maximum_temp_gap(dates, tmax, tmin):
     length = len(dates)
@@ -39,16 +54,18 @@ def maximum_temp_gap(dates, tmax, tmin):
     for x in range(length):
         diff = tmax[x] - tmin[x]
         tmax_tmin.append(diff)
-    return dates[x], max(tmax_tmin)
+        diff_dates = tmax_tmin.index(max(tmax_tmin))
+
+    return dates[diff_dates], max(tmax_tmin)
 
 def gdd(dates, tavg):
     length = len(dates)
     gdd_list = []
-    dates[1] = 5 or 6 or 7 or 8 or 9
     for x in range(length):
-        gdd = tavg[x] - 5
-        if gdd > 0:
-            gdd_list.append(gdd)
+        if dates[x][1] in [5, 6, 7, 8, 9]:
+            gdd = tavg[x] - 5
+            if gdd > 0:
+                gdd_list.append(gdd)
     return sum(gdd_list)
 
 def main():
