@@ -33,10 +33,10 @@ def maximum_rainfall_event(rainfall):
     rain_day_list = []
     rain_total_list = []
 
-    for rain in rainfall:
-        if rain > 0:
+    for x in rainfall:
+        if x > 0:
             rain_day += 1
-            rain_total += rain
+            rain_total += x
         else:
             if rain_day > 0:
                 rain_day_list.append(rain_day)
