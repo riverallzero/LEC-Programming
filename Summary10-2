@@ -15,3 +15,33 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+
+import requests
+import os
+
+def download(filename, year):
+    URL = 'https://api.taegon.kr/stations/146/?sy={}&ey={}&format=csv' .format(year, year)
+
+    if not os.path.exists(filename):
+        with open(filename, 'w') as f:
+            res = requests.get(URL)
+            f.write(res.text)
+
+def main():
+    filename = './weather_146_2021.csv'
+    download(filename)
+
+if __name__ == '__main__':
+    main()
+    
+    
+    
+    
+    
+전 과제 함수 
+def main():
+    filename = './code_weather(146)_2019-2019.csv'
+    H10.download(filename, 2019)
