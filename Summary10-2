@@ -1,0 +1,17 @@
+import requests
+import os
+
+def main():
+    URL = 'https://api.taegon.kr/stations/146/?sy=2021&ey=2021&format=csv'
+
+    filename = './weather_146_2021.csv'
+
+    if not os.path.exists(filename):
+        with open(filename, 'w') as f:
+            res = requests.get(URL)
+            f.write(res.text)
+    else:
+        print('이미 파일을 다운로드 받았습니다.')
+
+if __name__ == '__main__':
+    main()
