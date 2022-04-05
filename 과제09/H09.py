@@ -54,9 +54,8 @@ def maximum_temp_gap(dates, tmax, tmin):
     for x in range(length):
         diff = tmax[x] - tmin[x]
         tmax_tmin.append(diff)
-        diff_dates = tmax_tmin.index(max(tmax_tmin))
 
-    return dates[diff_dates], max(tmax_tmin)
+    return dates[tmax_tmin.index(max(tmax_tmin))], max(tmax_tmin)
 
 def gdd(dates, tavg):
     length = len(dates)
