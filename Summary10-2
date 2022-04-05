@@ -41,7 +41,8 @@ if __name__ == '__main__':
     
     
     
-전 과제 함수 
+전 과제 함수:
+from .py이름 import download
 def main():
     filename = './code_weather(146)_2019-2019.csv'
-    H10.download(filename, 2019)
+    py이.download(filename, 2019)
