@@ -1,9 +1,0 @@
-length = len(dates)
-max_tgap = -1
-max_date = None
-for i in range(length):
-   tgap = tmax[i] - tmin[i]
-     if tgap > max_tgap:
-         max_tgap = tgap
-        max_date = dates[i]
-return max_date, max_tgap
