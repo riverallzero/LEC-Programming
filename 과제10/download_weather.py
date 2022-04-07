@@ -11,7 +11,7 @@ def download(filename, year):
 
 def main():
     year = int(input('YEAR: '))
-    filename = './weather_146_{}.html'.format(year)
+    filename = './weather_146_{}.csv'.format(year)
     download(filename, year)
 
 if __name__ == '__main__':
