@@ -52,7 +52,7 @@ def main():
     print('최저기온날짜: {}'.format(cold_date(dates, tmin_data)))
 
     hw11_submission.submit(
-        '강다영', '2018-08-13', 38.9, '1933-01-27', -17.1
+        name, hot_date(dates, tmax_data), tmax(dates, tmax_data), cold_date(dates, tmin_data), tmin(dates, tmin_data)
     )
 
 
