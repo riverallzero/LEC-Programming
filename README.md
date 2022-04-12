@@ -14,7 +14,7 @@ LEC Summary ZIP.
 
 ### 2. 모듈 필수 요소
 빈 파일 생성
-__init__.py
+<pre><code>__init__.py</code></pre>
   
 ***
 
