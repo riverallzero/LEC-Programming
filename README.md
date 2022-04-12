@@ -3,7 +3,7 @@ LEC Summary ZIP.
 
 ### 1. def main()함수 필수 요소
 <pre><code>def main():
-    pass    </code></pre>
+    return    </code></pre>
 <pre><code>if __name__ == ' __main__ ':
     main() </code></pre>
 
