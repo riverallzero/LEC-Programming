@@ -25,11 +25,5 @@ lines = f.readlines() </code></pre>
 * 추천 방식
 <pre><code>with open(filename) as f:
     lines = f.readlines() </code></pre>
-
-***
-
-### 4.
-<pre><code>  if not os.path.exists(filename):
-        res = requests.get(URL)
-        with open(filename, 'w') as f:
-            f.write(res.text)</code></pre>
+* <pre><code>if not os.path.exists(filename):
+        res = requests.get(URL)</code></pre>
