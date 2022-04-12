@@ -7,8 +7,8 @@ LEC Summary ZIP.
 * <pre><code> if __name__ == ' __main__ ':
     main() </code></pre>
 
-- import할 때 def 함수():가 불러와지기 때문에 def main():의 내용은 상관 없음   
-- 본인이 print하면서 **확인하는 용도**
+> import할 때 def 함수():가 불러와지기 때문에 def main():의 내용은 상관 없음   
+>   > 본인이 print하면서 **확인하는 용도**
 
 ***
 
