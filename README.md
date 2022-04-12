@@ -14,4 +14,10 @@ LEC Summary ZIP.
 * 빈 파일 생성
    __init__.py 
 
-# 3. 
+# 3. 파일 다운
+* 기존 방식
+f = open(filename)
+lines = f.readlines()
+* 추천 방식
+with open(filename) as f:
+    lines = f.readlines()
