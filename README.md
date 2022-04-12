@@ -20,7 +20,7 @@ LEC Summary ZIP.
 
 ### 3. 파일 다운
 * 기존 방식
-<pre><code> f = open(filename)
+<pre><code>f = open(filename)
 lines = f.readlines() </code></pre>
 * 추천 방식
 <pre><code> with open(filename) as f:
