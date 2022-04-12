@@ -25,5 +25,6 @@ lines = f.readlines() </code></pre>
 * 추천 방식
 <pre><code>with open(filename) as f:
     lines = f.readlines() </code></pre>
-* <pre><code>if not os.path.exists(filename):
+* 다운 경로 유무
+<pre><code>if not os.path.exists(filename):
         res = requests.get(URL)</code></pre>
