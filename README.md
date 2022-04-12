@@ -2,8 +2,8 @@ LEC Summary ZIP.
 ================
 
 # 1. def main()함수 필수 요소
-* def main():
-    pass
+* <pre><code> def main():
+    pass    </code></pre>
 * if __name__ == ' __main__ ':
     main()
 
