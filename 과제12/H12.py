@@ -4,7 +4,7 @@ def main():
         text = input('X=? ')
         try:
             text = int(text)
-            if text != -1:
+            if text > 0 :
                 text_list.append(text)
         except:
             pass
