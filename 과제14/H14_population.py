@@ -129,7 +129,7 @@ def main():
     loc = input('지역명을 입력하세요(예:전라북도전주시): ')
     fig = plot_pop(loc)
     fig.show()
-
+    fig.savefig('{}.png' .format(loc))
 
 if __name__ == '__main__':
     main()
