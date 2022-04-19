@@ -126,7 +126,7 @@ def plot_pop(loc, popmax=6e6, poptick=1e6):
     return fig
 
 def main():
-    loc = input('지역명을 입력하세요(예:): ')
+    loc = input('지역명을 입력하세요(예:전라북도전주시): ')
     fig = plot_pop(loc)
     fig.show()
 
