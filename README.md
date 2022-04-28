@@ -28,3 +28,7 @@ lines = f.readlines() </code></pre>
 * 다운 경로
 <pre><code>if not os.path.exists(filename):
         res = requests.get(URL)</code></pre>
+        
+### 4. CLASS
+* def 함수 이름 count_rainfall()
+* CLSS 함수 이름 CountRainfall
