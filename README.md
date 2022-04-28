@@ -34,4 +34,4 @@ lines = f.readlines() </code></pre>
 ### 4. CLASS
 *  def  함수 이름 count_rainfall()
 * class 함수 이름 CountRainfall
-* <pre><code>def 메서드(self):</code></pre> 에서 self는 키워드. 다른 변수로 바꾸면 안됨(ex. self = 3 불가)
+* <pre><code>def 메서드(self):</code></pre> 여기서 self는 키워드. 다른 변수로 바꾸면 안됨(ex. self = 3 불가)
