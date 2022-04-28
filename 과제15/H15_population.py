@@ -133,17 +133,14 @@ def main(pop_jb=None, pop_jn=None):
 
     loc = input('지역명을 입력하세요(ex.전라북도전주시): ')
 
-    # if pop_jb == PopGraph('202203_202203_연령별인구현황_월간_전라북도.csv'):
-    #     print(pop_jb.plot(loc))
-    #
-    # elif pop_jn == PopGraph('202203_202203_연령별인구현황_월간_전라남도.csv'):
-    #     print(pop_jn.plot(loc))
-
     pop_jb = PopGraph('202203_202203_연령별인구현황_월간_전라북도.csv')
-    pop_jb.plot(loc)
-
     pop_jn = PopGraph('202203_202203_연령별인구현황_월간_전라남도.csv')
-    pop_jn.plot(loc)
+
+    if loc.startswith("전라북도"):
+        pop_jb.plot(loc)
+        
+    elif loc.startswith("전라남도"):
+        pop_jn.plot(loc)
 
 if __name__ == '__main__':
     main()
