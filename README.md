@@ -28,7 +28,10 @@ lines = f.readlines() </code></pre>
 * 다운 경로
 <pre><code>if not os.path.exists(filename):
         res = requests.get(URL)</code></pre>
-        
+
+***
+
 ### 4. CLASS
 *  def  함수 이름 count_rainfall()
 * class 함수 이름 CountRainfall
+* <pre><code>def 메서드(self):</code></pre> 에서 self는 키워드. 다른 변수로 바꾸면 안됨(ex. self = 3 불가)
