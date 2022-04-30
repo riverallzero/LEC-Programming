@@ -123,7 +123,7 @@ class PopGraph:
 
         return fig
 
-def main(pop_jb=None, pop_jn=None):
+def main():
     sns.set_context("talk")
     sns.set_style("white")
 
