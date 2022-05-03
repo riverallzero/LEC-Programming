@@ -46,5 +46,5 @@ elif querry =='h':
 
 ***
 
-### 5.ASCII, UNICODE
+### 5. ASCII &  UNICODE
 * ACII : 소문자 = 대문자 + 32
