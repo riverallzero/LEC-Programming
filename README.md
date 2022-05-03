@@ -41,4 +41,4 @@ lines = f.readlines() </code></pre>
     print(r.v)
 elif querry =='h':
     print(r.h) </code></pre>
-<pre><code>print(getattr(r, querry))</code></pre>
+<pre><code>= print(getattr(r, querry))</code></pre>
