@@ -36,6 +36,7 @@ lines = f.readlines() </code></pre>
 * class 함수 이름 CountRainfall
 * <pre><code>def 메서드(self):</code></pre> 여기서 self는 키워드. 다른 변수로 바꾸면 안됨(ex. self = 3 불가)
 
+* class 안에 들어있는 함수는 메서드
 * 특수 메서드로 편리하게 사용 가능
 <pre><code>if querry == 'v':
     print(r.v)
