@@ -43,3 +43,4 @@ lines = f.readlines() </code></pre>
 elif querry =='h':
     print(r.h) </code></pre>
 <pre><code>= print(getattr(r, querry))</code></pre>
+* 소문자 = 대문자 + 32
