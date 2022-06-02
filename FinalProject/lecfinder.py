@@ -210,7 +210,7 @@ def report1_result(driver):
         count = len(df['과제제목'])
         for s in range(count):
             if df['제출여부'][s] == '미제출':
-                return df['과제제목'][s], 'https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27306'
+                return df['과제제목'][s], df['제출기간'].str[24:29][s], 'https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27306'
         return '레포트는 없습니다.'
 
 
@@ -222,7 +222,7 @@ def report2_result(driver):
         count = len(df['과제제목'])
         for s in range(count):
             if df['제출여부'][s] == '미제출':
-                return df['과제제목'][s], 'https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27607'
+                return df['과제제목'][s], df['제출기간'].str[24:29][s], 'https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27607'
         return '레포트는 없습니다.'
 
 
@@ -234,7 +234,7 @@ def video1_result(driver):
         count = len(ds['강의제목'])
         for s in range(count):
             if ds['출석여부'][s] == '결석':
-                return ds['강의제목'][s], 'https://ieilms.jbnu.ac.kr/mypage/data/dataList.jsp?group_id=27306'
+                return ds['강의제목'][s], ds['인정기간'].str[24:29][s], 'https://ieilms.jbnu.ac.kr/mypage/data/dataList.jsp?group_id=27306'
         return '영상은 없습니다.'
 
 
@@ -246,7 +246,7 @@ def video2_result(driver):
         count = len(ds['강의제목'])
         for s in range(count):
             if ds['출석여부'][s] == '결석':
-                return ds['강의제목'][s], 'https://ieilms.jbnu.ac.kr/mypage/data/dataList.jsp?group_id=27607'
+                return ds['강의제목'][s], ds['인정기간'].str[24:29][s], 'https://ieilms.jbnu.ac.kr/mypage/data/dataList.jsp?group_id=27607'
         return '영상은 없습니다.'
 
 
@@ -258,7 +258,7 @@ def quiz1_result(driver):
         count = len(dc['퀴즈제목'])
         for s in range(count):
             if dc['제출여부'][s] == '미제출':
-                return dc['퀴즈제목'][s], 'https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id=27306'
+                return dc['퀴즈제목'][s], dc['기간'].str[24:29][s], 'https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id=27306'
         return '퀴즈는 없습니다.'
 
 
@@ -270,5 +270,5 @@ def quiz2_result(driver):
         count = len(dc['퀴즈제목'])
         for s in range(count):
             if dc['제출여부'][s] == '미제출':
-                return dc['퀴즈제목'][s], 'https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id=27607'
+                return dc['퀴즈제목'][s], dc['기간'].str[24:29][s], 'https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id=27607'
         return '퀴즈는 없습니다.'

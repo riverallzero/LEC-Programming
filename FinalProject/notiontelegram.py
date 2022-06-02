@@ -67,7 +67,7 @@ def handler(update, context):
 
 def send_telegram_msg(report2):
     if isinstance(report2, tuple):
-        bot.send_message(chat_id=id, text='{}\n{}'.format(report2[0], report2[1]))
+        bot.send_message(chat_id=id, text='{} (기한:{})\n{}'.format(report2[0], report2[1], report2[2]))
     else:
         bot.send_message(chat_id=id, text='{}'.format(report2))
 
