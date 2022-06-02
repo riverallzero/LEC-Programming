@@ -30,7 +30,7 @@ def lec1_report(driver):
 
         return df
     else:
-        return '매스컴 레포트는 없습니다.'
+        return '레포트는 없습니다.'
 
 
 def lec2_report(driver):
@@ -60,7 +60,7 @@ def lec2_report(driver):
                            '제출여부': submit})
         return df
     else:
-        return 'k-food 레포트는 없습니다.'
+        return '레포트는 없습니다.'
 
 
 def lec1_video(driver):
@@ -92,7 +92,7 @@ def lec1_video(driver):
         return ds
 
     else:
-        return '매스컴 강의는 없습니다.'
+        return '강의는 없습니다.'
 
 
 def lec2_video(driver):
@@ -124,7 +124,7 @@ def lec2_video(driver):
         return ds
 
     else:
-        return 'k-food 강의는 없습니다.'
+        return '강의는 없습니다.'
 
 
 def lec1_quiz(driver):
@@ -166,7 +166,7 @@ def lec1_quiz(driver):
 
         return dc
     else:
-        return '매스컴 퀴즈는 없습니다.'
+        return '퀴즈는 없습니다.'
 
 
 def lec2_quiz(driver):
@@ -199,76 +199,76 @@ def lec2_quiz(driver):
 
         return dc
     else:
-        return 'K-food 퀴즈는 없습니다.'
+        return '퀴즈는 없습니다.'
 
 
 def report1_result(driver):
     df = lec1_report(driver)
     if isinstance(df, str):
-        return '매스컴 레포트는 없습니다.'
+        return '레포트는 없습니다.'
     else:
         count = len(df['과제제목'])
         for s in range(count):
             if df['제출여부'][s] == '미제출':
                 return df['과제제목'][s], 'https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27306'
-        return '매스컴 레포트는 없습니다.'
+        return '레포트는 없습니다.'
 
 
 def report2_result(driver):
     df = lec2_report(driver)
     if isinstance(df, str):
-        return 'k-food 레포트는 없습니다.'
+        return '레포트는 없습니다.'
     else:
         count = len(df['과제제목'])
         for s in range(count):
             if df['제출여부'][s] == '미제출':
                 return df['과제제목'][s], 'https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27607'
-        return 'k-food 레포트는 없습니다.'
+        return '레포트는 없습니다.'
 
 
 def video1_result(driver):
     ds = lec1_video(driver)
     if isinstance(ds, str):
-        return '매스컴 영상은 없습니다.'
+        return '영상은 없습니다.'
     else:
         count = len(ds['강의제목'])
         for s in range(count):
             if ds['출석여부'][s] == '결석':
                 return ds['강의제목'][s], 'https://ieilms.jbnu.ac.kr/mypage/data/dataList.jsp?group_id=27306'
-        return '매스컴 영상은 없습니다.'
+        return '영상은 없습니다.'
 
 
 def video2_result(driver):
     ds = lec2_video(driver)
     if isinstance(ds, str):
-        return 'k-food 영상은 없습니다.'
+        return '영상은 없습니다.'
     else:
         count = len(ds['강의제목'])
         for s in range(count):
             if ds['출석여부'][s] == '결석':
                 return ds['강의제목'][s], 'https://ieilms.jbnu.ac.kr/mypage/data/dataList.jsp?group_id=27607'
-        return 'k-food 영상은 없습니다.'
+        return '영상은 없습니다.'
 
 
 def quiz1_result(driver):
     dc = lec1_quiz(driver)
     if isinstance(dc, str):
-        return '매스컴 퀴즈는 없습니다.'
+        return '퀴즈는 없습니다.'
     else:
         count = len(dc['퀴즈제목'])
         for s in range(count):
             if dc['제출여부'][s] == '미제출':
                 return dc['퀴즈제목'][s], 'https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id=27306'
-        return '매스컴 퀴즈는 없습니다.'
+        return '퀴즈는 없습니다.'
 
 
 def quiz2_result(driver):
     dc = lec2_quiz(driver)
     if isinstance(dc, str):
-        return 'k-food 퀴즈는 없습니다.'
+        return '퀴즈는 없습니다.'
     else:
         count = len(dc['퀴즈제목'])
         for s in range(count):
             if dc['제출여부'][s] == '미제출':
                 return dc['퀴즈제목'][s], 'https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id=27607'
-        return 'k-food 퀴즈는 없습니다.'
+        return '퀴즈는 없습니다.'
