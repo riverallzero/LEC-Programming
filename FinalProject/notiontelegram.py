@@ -43,25 +43,32 @@ def handler(update, context):
             bot.send_message(chat_id=id, text='레포트 완료')
         else:
             if report1 != '레포트는 없습니다.':
-                bot.send_message(chat_id=id, text='{}'.format(report1))
+                send_telegram_msg(report1)
             elif report2 != '레포트는 없습니다.':
-                bot.send_message(chat_id=id, text='{}'.format(report2))
+                send_telegram_msg(report2)
 
         if quiz1 and quiz2 == '퀴즈는 없습니다.':
             bot.send_message(chat_id=id, text='퀴즈 완료')
         else:
             if quiz1 != '퀴즈는 없습니다.':
-                bot.send_message(chat_id=id, text='{}'.format(quiz1))
+                send_telegram_msg(quiz1)
             elif quiz2 != '퀴즈는 없습니다.':
-                bot.send_message(chat_id=id, text='{}'.format(quiz2))
+                send_telegram_msg(quiz2)
 
         if video1 and video2 == '영상은 없습니다.':
             bot.send_message(chat_id=id, text='강의 영상 완료')
         else:
             if video1 != '영상은 없습니다.':
-                bot.send_message(chat_id=id, text='{}'.format(video1))
+                send_telegram_msg(video1)
             elif video2 != '영상은 없습니다.':
-                bot.send_message(chat_id=id, text='{}'.format(video2))
+                send_telegram_msg(video2)
+
+
+def send_telegram_msg(report2):
+    if isinstance(report2, tuple):
+        bot.send_message(chat_id=id, text='{}\n{}'.format(report2[0], report2[1]))
+    else:
+        bot.send_message(chat_id=id, text='{}'.format(report2))
 
 
 echo_handler = MessageHandler(Filters.text, handler)
