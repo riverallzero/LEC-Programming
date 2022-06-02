@@ -28,6 +28,7 @@ loginbtn = driver.find_element_by_xpath('//*[@id="loginform"]/table/tbody/tr[1]/
 loginbtn.click()
 time.sleep(2)
 
+
 def handler(update, context):
     user_text = update.message.text  # 사용자가 보낸 메세지를 user_text 변수에 저장합니다.
     if user_text == "할일":  # 사용자가 보낸 메세지가 "할일"이면
