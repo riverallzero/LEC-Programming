@@ -1,25 +1,10 @@
 import pandas as pd
-from selenium import webdriver
 import time
 
-driver = webdriver.Chrome(r'C:\Pych.Projects\Project\chromedriver.exe')
-url = 'https://ieilms.jbnu.ac.kr/'
-driver.get(url)
-time.sleep(2)
-
-driver.find_element_by_xpath('//*[@id="id"]').send_keys('202110065')
-driver.find_element_by_xpath('//*[@id="passwd"]').send_keys('allzero5391.')
-
-loginbtn = driver.find_element_by_xpath('//*[@id="loginform"]/table/tbody/tr[1]/td[2]/input')
-loginbtn.click()
-time.sleep(2)
-
 # lec 1 = 매스컴, lec 2 = K-food
-def lec1_report():
-    driver.get('https://ieilms.jbnu.ac.kr/paper/paperList.jsp')
-    lecbtn = driver.find_element_by_xpath('//*[@id="treebox"]/div/table/tbody/tr[11]/td[2]/table/tbody/tr/td[4]/span') # 매스컴
-    lecbtn.click()
-    time.sleep(2)
+def lec1_report(driver):
+    driver.get('https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27306')
+
     # 레포트 개수
     elements = driver.find_elements_by_css_selector('#borderB > tbody > tr')
     elementcount = len(elements)
@@ -48,11 +33,9 @@ def lec1_report():
         return '매스컴 레포트는 없습니다.'
 
 
-def lec2_report():
-    driver.get('https://ieilms.jbnu.ac.kr/paper/paperSelectGroup.jsp')
-    lecbtn = driver.find_element_by_xpath('//*[@id="treebox"]/div/table/tbody/tr[10]/td[2]/table/tbody/tr/td[4]/span') # K-food
-    lecbtn.click()
-    time.sleep(2)
+def lec2_report(driver):
+    driver.get('https://ieilms.jbnu.ac.kr/paper/paperSelectGroup.jsp?group_id=27607')
+
     # 레포트 개수
     elements = driver.find_elements_by_css_selector('#borderB > tbody > tr')
     elementcount = len(elements)
@@ -80,14 +63,9 @@ def lec2_report():
         return 'k-food 레포트는 없습니다.'
 
 
-def lec1_video():
-    driver.get('https://ieilms.jbnu.ac.kr/attend/videoDataViewAttendListStudent.jsp')
-    lecbtn = driver.find_element_by_xpath('//*[@id="center"]/div/b/div/div/div[3]/a')
-    lecbtn.click()
-    time.sleep(2)
-    videobtn = driver.find_element_by_xpath('//*[@id="treeboxtab"]/div/table/tbody/tr[19]/td[2]/table/tbody/tr/td[4]/span')
-    videobtn.click()
-    time.sleep(2)
+def lec1_video(driver):
+    driver.get('https://ieilms.jbnu.ac.kr/attend/videoDataViewAttendListStudent.jsp?group_id=27306')
+
     # 비디오 개수
     elements = driver.find_elements_by_css_selector('#dataBox > table > tbody > tr')
     elementcount = len(elements)
@@ -117,14 +95,9 @@ def lec1_video():
         return '매스컴 강의는 없습니다.'
 
 
-def lec2_video():
-    driver.get('https://ieilms.jbnu.ac.kr/attend/videoDataViewAttendListStudent.jsp')
-    lecbtn = driver.find_element_by_xpath('//*[@id="center"]/div/b/div/div/div[3]/a')
-    lecbtn.click()
-    time.sleep(2)
-    videobtn = driver.find_element_by_xpath('//*[@id="treeboxtab"]/div/table/tbody/tr[20]/td[2]/table/tbody/tr/td[4]/span')
-    videobtn.click()
-    time.sleep(2)
+def lec2_video(driver):
+    driver.get('https://ieilms.jbnu.ac.kr/attend/videoDataViewAttendListStudent.jsp?group_id=27607')
+
     # 비디오 개수
     elements = driver.find_elements_by_css_selector('#dataBox > table > tbody > tr')
     elementcount = len(elements)
@@ -154,7 +127,7 @@ def lec2_video():
         return 'k-food 강의는 없습니다.'
 
 
-def lec1_quiz():
+def lec1_quiz(driver):
     driver.get('https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id=27306')
     quizbtn = driver.find_element_by_xpath('//*[@id="center"]/div/b/div/div/div[3]/a')
     quizbtn.click()
@@ -196,7 +169,7 @@ def lec1_quiz():
         return '매스컴 퀴즈는 없습니다.'
 
 
-def lec2_quiz():
+def lec2_quiz(driver):
     driver.get('https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id=27607')
     quizbtn = driver.find_element_by_xpath('//*[@id="center"]/div/b/div/div/div[3]/a')
     quizbtn.click()
@@ -229,8 +202,8 @@ def lec2_quiz():
         return 'K-food 퀴즈는 없습니다.'
 
 
-def report1_result():
-    df = lec1_report()
+def report1_result(driver):
+    df = lec1_report(driver)
     if isinstance(df, str):
         return '매스컴 레포트는 없습니다.'
     else:
@@ -241,8 +214,8 @@ def report1_result():
         return '매스컴 레포트는 없습니다.'
 
 
-def report2_result():
-    df = lec2_report()
+def report2_result(driver):
+    df = lec2_report(driver)
     if isinstance(df, str):
         return 'k-food 레포트는 없습니다.'
     else:
@@ -253,8 +226,8 @@ def report2_result():
         return 'k-food 레포트는 없습니다.'
 
 
-def video1_result():
-    ds = lec1_video()
+def video1_result(driver):
+    ds = lec1_video(driver)
     if isinstance(ds, str):
         return '매스컴 영상은 없습니다.'
     else:
@@ -265,8 +238,8 @@ def video1_result():
         return '매스컴 영상은 없습니다.'
 
 
-def video2_result():
-    ds = lec2_video()
+def video2_result(driver):
+    ds = lec2_video(driver)
     if isinstance(ds, str):
         return 'k-food 영상은 없습니다.'
     else:
@@ -277,8 +250,8 @@ def video2_result():
         return 'k-food 영상은 없습니다.'
 
 
-def quiz1_result():
-    dc = lec1_quiz()
+def quiz1_result(driver):
+    dc = lec1_quiz(driver)
     if isinstance(dc, str):
         return '매스컴 퀴즈는 없습니다.'
     else:
@@ -289,8 +262,8 @@ def quiz1_result():
         return '매스컴 퀴즈는 없습니다.'
 
 
-def quiz2_result():
-    dc = lec2_quiz()
+def quiz2_result(driver):
+    dc = lec2_quiz(driver)
     if isinstance(dc, str):
         return 'k-food 퀴즈는 없습니다.'
     else:
