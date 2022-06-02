@@ -210,7 +210,7 @@ def report1_result(driver):
         count = len(df['과제제목'])
         for s in range(count):
             if df['제출여부'][s] == '미제출':
-                return df['과제제목'][s], df['제출기간'].str[24:29][s], 'https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27306'
+                return df['과제제목'][s], df['제출기간'].str[24:29][s]
         return '레포트는 없습니다.'
 
 
