@@ -34,7 +34,7 @@ def lec1_report(driver):
 
 
 def lec2_report(driver):
-    driver.get('https://ieilms.jbnu.ac.kr/paper/paperSelectGroup.jsp?group_id=27607')
+    driver.get('https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27607')
 
     # 레포트 개수
     elements = driver.find_elements_by_css_selector('#borderB > tbody > tr')
@@ -129,12 +129,7 @@ def lec2_video(driver):
 
 def lec1_quiz(driver):
     driver.get('https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id=27306')
-    quizbtn = driver.find_element_by_xpath('//*[@id="center"]/div/b/div/div/div[3]/a')
-    quizbtn.click()
-    time.sleep(2)
-    lecbtn = driver.find_element_by_xpath('//*[@id="treeboxtab"]/div/table/tbody/tr[11]/td[2]/table/tbody/tr/td[4]/span')
-    lecbtn.click()
-    time.sleep(2)
+
     # 퀴즈 개수
     elements = driver.find_elements_by_css_selector('#borderB > tbody > tr')
     elementcount = len(elements)
@@ -171,12 +166,7 @@ def lec1_quiz(driver):
 
 def lec2_quiz(driver):
     driver.get('https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id=27607')
-    quizbtn = driver.find_element_by_xpath('//*[@id="center"]/div/b/div/div/div[3]/a')
-    quizbtn.click()
-    time.sleep(2)
-    lecbtn = driver.find_element_by_xpath('//*[@id="treeboxtab"]/div/table/tbody/tr[10]/td[2]/table/tbody/tr/td[4]/span')
-    lecbtn.click()
-    time.sleep(2)
+
     # 퀴즈 개수
     elements = driver.find_elements_by_css_selector('#borderB > tbody > tr')
     elementcount = len(elements)
@@ -234,7 +224,7 @@ def video1_result(driver):
         count = len(ds['강의제목'])
         for s in range(count):
             if ds['출석여부'][s] == '결석':
-                return ds['강의제목'][s], ds['인정기간'].str[24:29][s]
+                return ('매스컴 '+ds['강의제목'][s][9:13]+' 강의'), ds['인정기간'].str[24:29][s]
         return '영상은 없습니다.'
 
 
@@ -246,7 +236,7 @@ def video2_result(driver):
         count = len(ds['강의제목'])
         for s in range(count):
             if ds['출석여부'][s] == '결석':
-                return ds['강의제목'][s], ds['인정기간'].str[24:29][s]
+                return ('K-Food '+ds['강의제목'][s][0:5]+' 강의'), ds['인정기간'].str[24:29][s] # 강의 제목에서 몇 주차 강의인지
         return '영상은 없습니다.'
 
 
