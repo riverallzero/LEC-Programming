@@ -26,8 +26,8 @@ def handler(update, context):
         driver.get(url)
         time.sleep(2)
 
-        driver.find_element_by_xpath('//*[@id="id"]').send_keys('202110065')
-        driver.find_element_by_xpath('//*[@id="passwd"]').send_keys('allzero5391.')
+        driver.find_element_by_xpath('//*[@id="id"]').send_keys('학번')
+        driver.find_element_by_xpath('//*[@id="passwd"]').send_keys('비밀번호')
 
         loginbtn = driver.find_element_by_xpath('//*[@id="loginform"]/table/tbody/tr[1]/td[2]/input')
         loginbtn.click()
