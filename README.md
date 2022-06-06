@@ -46,5 +46,16 @@ elif querry =='h':
 
 ***
 
-### 5. ASCII &  UNICODE
-* ACII : 소문자 = 대문자 + 32
+### 5. Pyflowchart
+<pre><code>
+$ pip3 install pyflowchart
+</code></pre>
+<pre><code>
+from pyflowchart import Flowchart
+with open('filename.py', encoding="UTF-8") as f:
+    code = f.read()
+
+fc = Flowchart.from_code(code)
+print(fc.flowchart())
+</code></pre>
+***
