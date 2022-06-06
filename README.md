@@ -55,5 +55,5 @@ with open('filename.py', encoding="UTF-8") as f:
 fc = Flowchart.from_code(code)
 print(fc.flowchart())</code></pre>
 
-* http://flowchart.js.org/ 여기에 
+* http://flowchart.js.org/ output copy
 ***
