@@ -47,15 +47,13 @@ elif querry =='h':
 ***
 
 ### 5. Pyflowchart
-<pre><code>
-$ pip3 install pyflowchart
-</code></pre>
-<pre><code>
-from pyflowchart import Flowchart
+<pre><code>$ pip3 install pyflowchart</code></pre>
+<pre><code>from pyflowchart import Flowchart
 with open('filename.py', encoding="UTF-8") as f:
     code = f.read()
 
 fc = Flowchart.from_code(code)
-print(fc.flowchart())
-</code></pre>
+print(fc.flowchart())</code></pre>
+
+* http://flowchart.js.org/ 여기에 
 ***
