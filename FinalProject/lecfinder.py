@@ -14,7 +14,6 @@ def lec1_report(driver):
         title = []
         date = []
         submit = []
-        ending = []
         for i in range(2, elementcount+1):
             titleresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[2]'.format(i)).text
             title.append(str(titleresult))
@@ -46,7 +45,6 @@ def lec2_report(driver):
         title = []
         date = []
         submit = []
-        ending = []
         for i in range(2, elementcount+1):
             titleresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[2]'.format(i)).text
             title.append(str(titleresult))
@@ -76,7 +74,6 @@ def lec1_video(driver):
         # 비디오 리스트
         title = []
         date = []
-        percent = []
         attendence = []
         for i in range(2, elementcount+1):
             titleresult = driver.find_element_by_xpath('//*[@id="dataBox"]/table/tbody/tr[{}]/td[2]'.format(i)).text
@@ -109,7 +106,6 @@ def lec2_video(driver):
         # 비디오 리스트
         title = []
         date = []
-        percent = []
         attendence = []
         for i in range(2, elementcount+1):
             titleresult = driver.find_element_by_xpath('//*[@id="dataBox"]/table/tbody/tr[{}]/td[2]'.format(i)).text
