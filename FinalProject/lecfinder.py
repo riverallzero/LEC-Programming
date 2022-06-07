@@ -21,8 +21,6 @@ def lec1_report(driver):
             date.append(str(dateresult))
             submitresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[4]'.format(i)).text
             submit.append(str(submitresult))
-            endingresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[5]'.format(i)).text
-            ending.append(str(endingresult))
 
         df = pd.DataFrame({'과제제목': title,
                            '제출기간': date,
@@ -52,8 +50,6 @@ def lec2_report(driver):
             date.append(str(dateresult))
             submitresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[4]'.format(i)).text
             submit.append(str(submitresult))
-            endingresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[5]'.format(i)).text
-            ending.append(str(endingresult))
 
         df = pd.DataFrame({'과제제목': title,
                            '제출기간': date,
@@ -80,8 +76,6 @@ def lec1_video(driver):
             title.append(str(titleresult))
             dateresult = driver.find_element_by_xpath('//*[@id="dataBox"]/table/tbody/tr[{}]/td[3]'.format(i)).text
             date.append(str(dateresult))
-            percentresult = driver.find_element_by_xpath('//*[@id="dataBox"]/table/tbody/tr[{}]/td[5]'.format(i)).text
-            percent.append(str(percentresult))
             attendenceresult = driver.find_element_by_xpath('//*[@id="dataBox"]/table/tbody/tr[{}]/td[6]'.format(i)).text
             attendence.append(str(attendenceresult))
 
@@ -112,8 +106,6 @@ def lec2_video(driver):
             title.append(str(titleresult))
             dateresult = driver.find_element_by_xpath('//*[@id="dataBox"]/table/tbody/tr[{}]/td[3]'.format(i)).text
             date.append(str(dateresult))
-            percentresult = driver.find_element_by_xpath('//*[@id="dataBox"]/table/tbody/tr[{}]/td[5]'.format(i)).text
-            percent.append(str(percentresult))
             attendenceresult = driver.find_element_by_xpath('//*[@id="dataBox"]/table/tbody/tr[{}]/td[6]'.format(i)).text
             attendence.append(str(attendenceresult))
 
