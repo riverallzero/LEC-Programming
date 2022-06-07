@@ -3,6 +3,7 @@ import time
 
 # lec 1 = 매스컴, lec 2 = K-food
 def lec1_report(driver):
+    # 레포트 사이트 group_id 포함된 url
     driver.get('https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27306')
 
     # 레포트 개수
@@ -34,6 +35,7 @@ def lec1_report(driver):
 
 
 def lec2_report(driver):
+    # 레포트 사이트 group_id 포함된 url
     driver.get('https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27607')
 
     # 레포트 개수
@@ -64,6 +66,7 @@ def lec2_report(driver):
 
 
 def lec1_video(driver):
+    # 영상 출석 사이트 group_id 포함된 url
     driver.get('https://ieilms.jbnu.ac.kr/attend/videoDataViewAttendListStudent.jsp?group_id=27306')
 
     # 비디오 개수
@@ -96,6 +99,7 @@ def lec1_video(driver):
 
 
 def lec2_video(driver):
+    # 영상 출석 사이트 group_id 포함된 url
     driver.get('https://ieilms.jbnu.ac.kr/attend/videoDataViewAttendListStudent.jsp?group_id=27607')
 
     # 비디오 개수
@@ -128,6 +132,7 @@ def lec2_video(driver):
 
 
 def lec1_quiz(driver):
+    # 퀴즈 사이트 group_id 포함된 url
     driver.get('https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id=27306')
 
     # 퀴즈 개수
@@ -165,6 +170,7 @@ def lec1_quiz(driver):
 
 
 def lec2_quiz(driver):
+    # 퀴즈 사이트 group_id 포함된 url
     driver.get('https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id=27607')
 
     # 퀴즈 개수
