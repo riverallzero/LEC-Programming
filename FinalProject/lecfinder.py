@@ -133,21 +133,12 @@ def lec1_quiz(driver):
         submit = []
         for i in range(2, elementcount+1):
             titleresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[2]'.format(i)).text
-            if not titleresult:
-                continue
-            else:
-                title.append(str(titleresult))
+            title.append(str(titleresult))
             dateresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[3]'.format(i)).text
-            if not dateresult:
-                continue
-            else:
-                date.append(str(dateresult))
+            date.append(str(dateresult))
             submitresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[4]'.format(i)).text
-            if not titleresult:
-                continue
-            else:
-                submit.append(str(submitresult))
-
+            submit.append(str(submitresult))
+            
         dc = pd.DataFrame({'퀴즈제목': title,
                            '기간': date,
                            '제출여부': submit})
