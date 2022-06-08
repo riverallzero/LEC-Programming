@@ -4,6 +4,7 @@ import pandas as pd
 class LecFinder:
     def __init__(self):
         self.groupid_lec1 = 강의 group_id(5자리 숫자) 
+        # 예시) self.groupid_lec1 = 12345
         self.groupid_lec2 = 강의 group_id(5자리 숫자)
 
         self.lms_id = '학번'
