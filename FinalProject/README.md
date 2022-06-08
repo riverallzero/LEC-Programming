@@ -13,7 +13,7 @@
 ***
   
 ### Description
-<img src="https://user-images.githubusercontent.com/93754504/172565898-dce0a8db-11d9-43ae-a222-48ab86e353e8.png"  width="300" height="600"/>
+<img src="https://user-images.githubusercontent.com/93754504/172565898-dce0a8db-11d9-43ae-a222-48ab86e353e8.png"  width="300" height="500"/>
 
   
 ***
