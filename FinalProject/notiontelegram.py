@@ -5,82 +5,91 @@ import lecfinder
 from selenium import webdriver
 import time
 
-lf = lecfinder.LecFinder()
 
-token = '5513740361:AAHKlEFGN8ySC7dLpkThZF4-XjnOjus-mSQ'
-id = '5580001250'
-bot = telegram.Bot(token=token)
+class NotionTelegramBot:
+    def __init__(self):
+        self.lf = lecfinder.LecFinder()
 
-updater = Updater(token=token, use_context=True)
-dispatcher = updater.dispatcher
-updater.start_polling()
+        token = '5513740361:AAHKlEFGN8ySC7dLpkThZF4-XjnOjus-mSQ'
+        self.telegramid = '5580001250'
+        self.bot = telegram.Bot(token=token)
+
+        updater = Updater(token=token, use_context=True)
+        self.dispatcher = updater.dispatcher
+        updater.start_polling()
 
 
-def handler(update, context):
-    user_text = update.message.text  # 사용자가 보낸 메세지를 user_text 변수에 저장합니다.
-    if user_text == "할일":  # 사용자가 보낸 메세지가 "할일"이면
-        bot.send_message(chat_id=id, text='로딩중∙∙∙')
-        driver = webdriver.Chrome(r'C:\Pych.Projects\Project\chromedriver.exe')
-        url = 'https://ieilms.jbnu.ac.kr/'
-        driver.get(url)
-        time.sleep(2)
+    def handler(self, update, context):
+        user_text = update.message.text  # 사용자가 보낸 메세지를 user_text 변수에 저장합니다.
+        if user_text == "할일":  # 사용자가 보낸 메세지가 "할일"이면
+            self.bot.send_message(chat_id=self.telegramid, text='로딩중∙∙∙')
+            driver = webdriver.Chrome(r'C:\Pych.Projects\Project\chromedriver.exe')
+            url = 'https://ieilms.jbnu.ac.kr/'
+            driver.get(url)
+            time.sleep(2)
 
-        driver.find_element_by_xpath('//*[@id="id"]').send_keys(lf.lms_id)
-        driver.find_element_by_xpath('//*[@id="passwd"]').send_keys(lf.lms_pw)
+            driver.find_element_by_xpath('//*[@id="id"]').send_keys(self.lf.lms_id)
+            driver.find_element_by_xpath('//*[@id="passwd"]').send_keys(self.lf.lms_pw)
 
-        loginbtn = driver.find_element_by_xpath('//*[@id="loginform"]/table/tbody/tr[1]/td[2]/input')
-        loginbtn.click()
-        time.sleep(2)
+            loginbtn = driver.find_element_by_xpath('//*[@id="loginform"]/table/tbody/tr[1]/td[2]/input')
+            loginbtn.click()
+            time.sleep(2)
 
-        report1 = lf.report1_result(driver)
-        report2 = lf.report2_result(driver)
-        video1 = lf.video1_result(driver)
-        video2 = lf.video2_result(driver)
-        quiz1 = lf.quiz1_result(driver)
-        quiz2 = lf.quiz2_result(driver)
+            report1 = self.lf.report1_result(driver)
+            report2 = self.lf.report2_result(driver)
+            video1 = self.lf.video1_result(driver)
+            video2 = self.lf.video2_result(driver)
+            quiz1 = self.lf.quiz1_result(driver)
+            quiz2 = self.lf.quiz2_result(driver)
 
-        if report1 and report2 == '레포트는 없습니다.':
-            bot.send_message(chat_id=id, text='[레포트] 완료')
+            if report1 and report2 == '레포트는 없습니다.':
+                self.bot.send_message(chat_id=self.telegramid, text='[레포트] 완료')
+            else:
+                if report1 != '레포트는 없습니다.':
+                    self.send_telegram_msg(report1)
+                    self.bot.send_message(chat_id=self.telegramid, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.lf.groupid_lec1))
+                elif report2 != '레포트는 없습니다.':
+                    self.send_telegram_msg(report2)
+                    self.bot.send_message(chat_id=self.telegramid, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.lf.groupid_lec2))
+
+            if quiz1 and quiz2 == '퀴즈는 없습니다.':
+                self.bot.send_message(chat_id=self.telegramid, text='[퀴즈] 완료')
+            else:
+                if quiz1 != '퀴즈는 없습니다.':
+                    self.send_telegram_msg(quiz1)
+                    self.bot.send_message(chat_id=self.telegramid, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.lf.groupid_lec1))
+                elif quiz2 != '퀴즈는 없습니다.':
+                    self.send_telegram_msg(quiz2)
+                    self.bot.send_message(chat_id=self.telegramid, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.lf.groupid_lec2))
+
+
+            if video1 and video2 == '영상은 없습니다.':
+                self.bot.send_message(chat_id=self.telegramid, text='[강의 영상] 완료')
+            else:
+                if video1 != '영상은 없습니다.':
+                    self.send_telegram_msg(video1)
+                    self.bot.send_message(chat_id=self.telegramid, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.lf.groupid_lec1))
+                elif video2 != '영상은 없습니다.':
+                    self.send_telegram_msg(video2)
+                    self.bot.send_message(chat_id=self.telegramid, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.lf.groupid_lec2))
+
+            logout = driver.find_element_by_xpath('//*[@id="centerTop"]/div[2]/ul/li/div/a[4]')
+            logout.click()
+            time.sleep(2)
+
+
+    def send_telegram_msg(self, report2):
+        if isinstance(report2, tuple):
+            self.bot.send_message(chat_id=self.telegramid, text='{} (기한:{})'.format(report2[0], report2[1]))
         else:
-            if report1 != '레포트는 없습니다.':
-                send_telegram_msg(report1)
-                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(lf.groupid_lec1))
-            elif report2 != '레포트는 없습니다.':
-                send_telegram_msg(report2)
-                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(lf.groupid_lec2))
-
-        if quiz1 and quiz2 == '퀴즈는 없습니다.':
-            bot.send_message(chat_id=id, text='[퀴즈] 완료')
-        else:
-            if quiz1 != '퀴즈는 없습니다.':
-                send_telegram_msg(quiz1)
-                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(lf.groupid_lec1))
-            elif quiz2 != '퀴즈는 없습니다.':
-                send_telegram_msg(quiz2)
-                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(lf.groupid_lec2))
+            self.bot.send_message(chat_id=self.telegramid, text='{}'.format(report2))
 
 
-        if video1 and video2 == '영상은 없습니다.':
-            bot.send_message(chat_id=id, text='[강의 영상] 완료')
-        else:
-            if video1 != '영상은 없습니다.':
-                send_telegram_msg(video1)
-                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(lf.groupid_lec1))
-            elif video2 != '영상은 없습니다.':
-                send_telegram_msg(video2)
-                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(lf.groupid_lec2))
-
-        logout = driver.find_element_by_xpath('//*[@id="centerTop"]/div[2]/ul/li/div/a[4]')
-        logout.click()
-        time.sleep(2)
+def main():
+    notionbot = NotionTelegramBot()
+    echo_handler = MessageHandler(Filters.text, notionbot.handler)
+    notionbot.dispatcher.add_handler(echo_handler)
 
 
-def send_telegram_msg(report2):
-    if isinstance(report2, tuple):
-        bot.send_message(chat_id=id, text='{} (기한:{})'.format(report2[0], report2[1]))
-    else:
-        bot.send_message(chat_id=id, text='{}'.format(report2))
-
-
-echo_handler = MessageHandler(Filters.text, handler)
-dispatcher.add_handler(echo_handler)
+if __name__ == '__main__':
+    main()
