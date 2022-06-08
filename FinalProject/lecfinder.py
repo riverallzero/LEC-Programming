@@ -3,8 +3,8 @@ import pandas as pd
 
 class LecFinder:
     def __init__(self):
-        self.groupid_lec1 = 27306 # 매스컴과 대중문화
-        self.groupid_lec2 = 27607 # K-food 한국인의 밥상
+        self.groupid_lec1 = 강의 group_id(5자리 숫자) 
+        self.groupid_lec2 = 강의 group_id(5자리 숫자)
 
         self.lms_id = '학번'
         self.lms_pw = '비밀번호'
