@@ -10,8 +10,6 @@ token = '5513740361:AAHKlEFGN8ySC7dLpkThZF4-XjnOjus-mSQ'
 id = '5580001250'
 bot = telegram.Bot(token=token)
 
-
-# updater
 updater = Updater(token=token, use_context=True)
 dispatcher = updater.dispatcher
 updater.start_polling()
@@ -26,8 +24,8 @@ def handler(update, context):
         driver.get(url)
         time.sleep(2)
 
-        driver.find_element_by_xpath('//*[@id="id"]').send_keys('학번')
-        driver.find_element_by_xpath('//*[@id="passwd"]').send_keys('비밀번호')
+        driver.find_element_by_xpath('//*[@id="id"]').send_keys(lf.lms_id)
+        driver.find_element_by_xpath('//*[@id="passwd"]').send_keys(lf.lms_pw)
 
         loginbtn = driver.find_element_by_xpath('//*[@id="loginform"]/table/tbody/tr[1]/td[2]/input')
         loginbtn.click()
@@ -45,20 +43,20 @@ def handler(update, context):
         else:
             if report1 != '레포트는 없습니다.':
                 send_telegram_msg(report1)
-                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27306')
+                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(lf.groupid_lec1))
             elif report2 != '레포트는 없습니다.':
                 send_telegram_msg(report2)
-                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27607')
+                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(lf.groupid_lec2))
 
         if quiz1 and quiz2 == '퀴즈는 없습니다.':
             bot.send_message(chat_id=id, text='[퀴즈] 완료')
         else:
             if quiz1 != '퀴즈는 없습니다.':
                 send_telegram_msg(quiz1)
-                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27306')
+                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(lf.groupid_lec1))
             elif quiz2 != '퀴즈는 없습니다.':
                 send_telegram_msg(quiz2)
-                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27607')
+                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(lf.groupid_lec2))
 
 
         if video1 and video2 == '영상은 없습니다.':
@@ -66,14 +64,15 @@ def handler(update, context):
         else:
             if video1 != '영상은 없습니다.':
                 send_telegram_msg(video1)
-                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27306')
+                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(lf.groupid_lec1))
             elif video2 != '영상은 없습니다.':
                 send_telegram_msg(video2)
-                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id=27607')
+                bot.send_message(chat_id=id, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(lf.groupid_lec2))
 
         logout = driver.find_element_by_xpath('//*[@id="centerTop"]/div[2]/ul/li/div/a[4]')
         logout.click()
         time.sleep(2)
+
 
 def send_telegram_msg(report2):
     if isinstance(report2, tuple):
