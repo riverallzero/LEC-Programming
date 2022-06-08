@@ -27,5 +27,5 @@
 ***
 
 ### Source
-<li>텔레그램 봇
+<li>텔레그램 봇: 
 https://py-son.tistory.com/8
