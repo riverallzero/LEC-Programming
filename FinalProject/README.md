@@ -23,6 +23,8 @@
 
 <img src="https://user-images.githubusercontent.com/93754504/172563833-955d5064-cbe7-4914-9622-c421792b9c74.png"  width="800" height="600"/>
 
+<li>시현 동영상
+https://user-images.githubusercontent.com/93754504/172566878-57b5bc80-4eb8-4112-9966-e8a0e26985d1.mp4
 ***
 
 ### Source
