@@ -30,5 +30,5 @@
 ***
 
 ### Source
-<li>텔레그램 봇: 
+<li>텔레그램 봇 만들기 참고 : 
 https://py-son.tistory.com/8
