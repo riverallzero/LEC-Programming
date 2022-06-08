@@ -1,10 +1,11 @@
 import telegram
 from telegram.ext import Updater, MessageHandler
 from telegram.ext import Filters
-import lecfinder as lf
+import lecfinder
 from selenium import webdriver
 import time
 
+lf = lecfinder.LecFinder()
 
 token = '5513740361:AAHKlEFGN8ySC7dLpkThZF4-XjnOjus-mSQ'
 id = '5580001250'
