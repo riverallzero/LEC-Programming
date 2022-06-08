@@ -7,7 +7,7 @@ class LecFinder:
         self.groupid_lec2 = 27607 # K-food 한국인의 밥상
 
         self.lms_id = '학번'
-        self.lms_pw = ''
+        self.lms_pw = '비밀번호'
 
 
     def lec1_report(self, driver):
