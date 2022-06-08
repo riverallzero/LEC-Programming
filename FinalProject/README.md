@@ -13,6 +13,11 @@
 ***
   
 ### Description
+1. 먼저 봇을 검색해 '할일'이라고 치면 Selenium이 실행될 동안 '로딩중'이라는 메세지가 발송된다.
+![image](https://user-images.githubusercontent.com/93754504/172561679-323f813a-d30d-40a9-b0fa-4d602bf94934.png)
+2. 탐색을 마치면, 결과를 사용자에게 보낸다. 해야할 일이 남았다면 그 카테고리의 이름과 기한, 링크를 첨부해 메세지를 보내고, 다 했다면 각 카테고리 별로 완료라는 메세지를 보낸다.
+![image](https://user-images.githubusercontent.com/93754504/172561869-45c6d2e6-5d34-4943-99cc-31249ec0ba46.png)
+![image](https://user-images.githubusercontent.com/93754504/172562233-662d349d-559a-40ff-831e-2574eca74c91.png)
 
  
   
