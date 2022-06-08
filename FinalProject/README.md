@@ -1,4 +1,4 @@
-# 2022 Final Project
+# < 2022 Final Project >
 ## 사이버 강의를 들을 때 놓치는 영상, 레포트, 퀴즈를 알려주기위한 알림 봇 🤖
 
 <li>프로젝트 명: Lms Notion Bot
