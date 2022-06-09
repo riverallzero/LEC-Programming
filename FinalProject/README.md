@@ -57,7 +57,7 @@ class NotionTelegramBot:
 2. 탐색을 마치면, 결과를 사용자에게 보낸다. 
    해야할 일이 남았다면 그 카테고리의 이름과 기한, 링크를 첨부해 메세지를 보내고, 다 했다면 각 카테고리 별로 완료라는 메세지를 보낸다.
 
-<img src="https://user-images.githubusercontent.com/93754504/172796737-e5682f80-1f1e-4e0c-b1b1-bc3a7b5477de.png"  width="1600" height="900"/>
+<img src="https://user-images.githubusercontent.com/93754504/172796737-e5682f80-1f1e-4e0c-b1b1-bc3a7b5477de.png"  width="160" height="90"/>
 
 #### 시현 동영상
 <li>텔레그램 봇 시현: https://user-images.githubusercontent.com/93754504/172566878-57b5bc80-4eb8-4112-9966-e8a0e26985d1.mp4
