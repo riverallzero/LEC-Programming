@@ -16,7 +16,6 @@
 <li>lecfinder.py = 셀레니움을 이용해 LMS 크롤링하는 class 함수</li>
 <pre><code> 
 class LecFinder:
-  
       def __init__(self):    
             강의 group_id 입력(주소창에 5자리 숫자로 존재)
             LMS 아이디 입력     
@@ -38,7 +37,6 @@ class LecFinder:
 <li>notiontelegrambot.py = 크롤링한 정보들을 텔레그램 봇을 통해 메세지 전달하는 class 함수</li>
 <pre><code>
 class NotionTelegramBot:
-  
       def __init__(self):
             lecfinder.py 불러와 lf라고 지정
             텔레그램 토큰 입력
