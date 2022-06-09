@@ -31,7 +31,7 @@ class LecFinder:
   
       def video_result(self, driver):
   
-      def quiz_result(self, driver):                                                                                                              
+      def quiz_result(self, driver):                               
 </code></pre>
 
 #### <li>notiontelegrambot.py = 크롤링한 정보들을 텔레그램 봇을 통해 메세지 전달하는 class 함수</li>
