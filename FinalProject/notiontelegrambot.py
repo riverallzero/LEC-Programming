@@ -11,7 +11,7 @@ class NotionTelegramBot:
         self.lf = lecfinder.LecFinder()
 
         token = '5513740361:AAHKlEFGN8ySC7dLpkThZF4-XjnOjus-mSQ'
-        self.telegramid = '텔레그램 채팅 아이디'
+        self.telegramid = '텔레그램 채팅 '
         self.bot = telegram.Bot(token=token)
 
         updater = Updater(token=token, use_context=True)
@@ -20,8 +20,8 @@ class NotionTelegramBot:
 
 
     def handler(self, update, context):
-        user_text = update.message.text  
-        if user_text == "할일":  
+        user_text = update.message.text
+        if user_text == "할일":
             self.bot.send_message(chat_id=self.telegramid, text='로딩중∙∙∙')
             driver = webdriver.Chrome(r'C:\Pych.Projects\Project\chromedriver.exe')
             url = 'https://ieilms.jbnu.ac.kr/'
@@ -42,34 +42,34 @@ class NotionTelegramBot:
             quiz1 = self.lf.quiz1_result(driver)
             quiz2 = self.lf.quiz2_result(driver)
 
-            if report1 and report2 == '레포트는 없습니다.':
+            if report2 == '레포트는 없습니다.':
                 self.bot.send_message(chat_id=self.telegramid, text='[레포트] 완료')
             else:
                 if report1 != '레포트는 없습니다.':
                     self.send_telegram_msg(report1)
                     self.bot.send_message(chat_id=self.telegramid, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.lf.groupid_lec1))
-                elif report2 != '레포트는 없습니다.':
+                if report2 != '레포트는 없습니다.':
                     self.send_telegram_msg(report2)
                     self.bot.send_message(chat_id=self.telegramid, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.lf.groupid_lec2))
 
-            if quiz1 and quiz2 == '퀴즈는 없습니다.':
+            if quiz2 == '퀴즈는 없습니다.':
                 self.bot.send_message(chat_id=self.telegramid, text='[퀴즈] 완료')
             else:
                 if quiz1 != '퀴즈는 없습니다.':
                     self.send_telegram_msg(quiz1)
                     self.bot.send_message(chat_id=self.telegramid, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.lf.groupid_lec1))
-                elif quiz2 != '퀴즈는 없습니다.':
+                if quiz2 != '퀴즈는 없습니다.':
                     self.send_telegram_msg(quiz2)
                     self.bot.send_message(chat_id=self.telegramid, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.lf.groupid_lec2))
 
 
-            if video1 and video2 == '영상은 없습니다.':
+            if video2 == '영상은 없습니다.':
                 self.bot.send_message(chat_id=self.telegramid, text='[강의 영상] 완료')
             else:
                 if video1 != '영상은 없습니다.':
                     self.send_telegram_msg(video1)
                     self.bot.send_message(chat_id=self.telegramid, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.lf.groupid_lec1))
-                elif video2 != '영상은 없습니다.':
+                if video2 != '영상은 없습니다.':
                     self.send_telegram_msg(video2)
                     self.bot.send_message(chat_id=self.telegramid, text='-> https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.lf.groupid_lec2))
 
@@ -79,8 +79,9 @@ class NotionTelegramBot:
 
 
     def send_telegram_msg(self, report2):
-        if isinstance(report2, tuple):
-            self.bot.send_message(chat_id=self.telegramid, text='{} (기한:{})'.format(report2[0], report2[1]))
+        if isinstance(report2, list):
+            for video_report in report2:
+                self.bot.send_message(chat_id=self.telegramid, text='[기한: {}]\n{}'.format(video_report[1], video_report[0]))
         else:
             self.bot.send_message(chat_id=self.telegramid, text='{}'.format(report2))
 
