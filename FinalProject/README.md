@@ -13,9 +13,39 @@
 ***
   
 ### Description
-<li> lecfinder.py = LMS 크롤링 
-<li> notiontelegrambot.py = 텔레그램 
+<li>lecfinder.py = 셀레니움을 이용해 LMS 크롤링하는 class 함수</li>
+<code> 
+class LecFinder: 
   
+      def __init__(self):    
+            강의 group_id 입력(주소창에 5자리 숫자로 존재)
+            LMS 아이디 입력     
+            LMS 비밀번호 입력
+      
+      def lec_report(self, driver):
+  
+      def lec_video(self, driver):
+  
+      def lec_quiz(self, driver):
+  
+      def report_result(self, driver):
+  
+      def video_result(self, driver):
+  
+      def quiz_result(self, driver):
+
+<li>notiontelegrambot.py = 크롤링한 정보들을 텔레그램 봇을 통해 메세지 전달하는 class 함수</li>
+<code>
+class NotionTelegramBot:
+  
+      def __init__(self):
+  
+      def handler(self, update, context):
+  
+      def send_telegram_msg(self, report):
+      
+      def main():
+    
 ***
   
 ### Result
