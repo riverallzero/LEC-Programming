@@ -20,8 +20,8 @@ class NotionTelegramBot:
 
 
     def handler(self, update, context):
-        user_text = update.message.text  # 사용자가 보낸 메세지를 user_text 변수에 저장합니다.
-        if user_text == "할일":  # 사용자가 보낸 메세지가 "할일"이면
+        user_text = update.message.text  
+        if user_text == "할일":  
             self.bot.send_message(chat_id=self.telegramid, text='로딩중∙∙∙')
             driver = webdriver.Chrome(r'C:\Pych.Projects\Project\chromedriver.exe')
             url = 'https://ieilms.jbnu.ac.kr/'
