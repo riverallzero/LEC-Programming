@@ -11,7 +11,7 @@ class NotionTelegramBot:
         self.lf = lecfinder.LecFinder()
 
         token = '5513740361:AAHKlEFGN8ySC7dLpkThZF4-XjnOjus-mSQ'
-        self.telegramid = '5580001250'
+        self.telegramid = '텔레그램 채팅 아이디'
         self.bot = telegram.Bot(token=token)
 
         updater = Updater(token=token, use_context=True)
