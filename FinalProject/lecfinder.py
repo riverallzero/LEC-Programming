@@ -3,17 +3,17 @@ import pandas as pd
 
 class LecFinder:
     def __init__(self):
-        self.groupid_lec1 = 강의group_id(5자리수)
-        self.groupid_lec2 = 강의group_id(5자리수)
+        self.groupid_lec1 = 강의 group_id(5자리수)
+        self.groupid_lec2 = 강의 group_id(5자리수)
 
         self.lms_id = 'LMS 로그인 아이디'
-        self.lms_pw = 'LMS 로그인 '
+        self.lms_pw = 'LMS 로그인 비밀번호'
 
     def lec1_report(self, driver):
         driver.get('https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.groupid_lec1))
 
         # 레포트 개수
-        elements = driver.find_elements_by_css_selector('#borderB > tbody > tr')
+        elements = driver.find_elements_by_css_selector('#borderBox > tbody > tr')
         elementcount = len(elements)
         if elementcount >= 1:
             # 레포트 리스트
@@ -21,11 +21,11 @@ class LecFinder:
             date = []
             submit = []
             for i in range(1, elementcount + 1):
-                titleresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[2]'.format(i)).text
+                titleresult = driver.find_element_by_xpath('//*[@id="borderBox"]/tbody/tr[{}]/td[2]'.format(i)).text
                 title.append(str(titleresult))
-                dateresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[3]'.format(i)).text
+                dateresult = driver.find_element_by_xpath('//*[@id="borderBox"]/tbody/tr[{}]/td[3]'.format(i)).text
                 date.append(str(dateresult))
-                submitresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[4]'.format(i)).text
+                submitresult = driver.find_element_by_xpath('//*[@id="borderBox"]/tbody/tr[{}]/td[4]'.format(i)).text
                 submit.append(str(submitresult))
 
             df = pd.DataFrame({'과제제목': title,
@@ -40,7 +40,7 @@ class LecFinder:
         driver.get('https://ieilms.jbnu.ac.kr/paper/paperList.jsp?group_id={}'.format(self.groupid_lec2))
 
         # 레포트 개수
-        elements = driver.find_elements_by_css_selector('#borderB > tbody > tr')
+        elements = driver.find_elements_by_css_selector('#borderBox > tbody > tr')
         elementcount = len(elements)
         if elementcount >= 1:
             # 레포트 리스트
@@ -48,11 +48,11 @@ class LecFinder:
             date = []
             submit = []
             for i in range(1, elementcount + 1):
-                titleresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[2]'.format(i)).text
+                titleresult = driver.find_element_by_xpath('//*[@id="borderBox"]/tbody/tr[{}]/td[2]'.format(i)).text
                 title.append(str(titleresult))
-                dateresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[3]'.format(i)).text
+                dateresult = driver.find_element_by_xpath('//*[@id="borderBox"]/tbody/tr[{}]/td[3]'.format(i)).text
                 date.append(str(dateresult))
-                submitresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[4]'.format(i)).text
+                submitresult = driver.find_element_by_xpath('//*[@id="borderBox"]/tbody/tr[{}]/td[4]'.format(i)).text
                 submit.append(str(submitresult))
 
             df = pd.DataFrame({'과제제목': title,
@@ -128,7 +128,7 @@ class LecFinder:
         driver.get('https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id={}'.format(self.groupid_lec1))
 
         # 퀴즈 개수
-        elements = driver.find_elements_by_css_selector('#borderB > tbody > tr')
+        elements = driver.find_elements_by_css_selector('#borderBox > tbody > tr')
         elementcount = len(elements)
         if elementcount >= 1:
             # 퀴즈 리스트
@@ -136,11 +136,11 @@ class LecFinder:
             date = []
             submit = []
             for i in range(1, elementcount + 1):
-                titleresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[2]'.format(i)).text
+                titleresult = driver.find_element_by_xpath('//*[@id="borderBox"]/tbody/tr[{}]/td[2]'.format(i)).text
                 title.append(str(titleresult))
-                dateresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[3]'.format(i)).text
+                dateresult = driver.find_element_by_xpath('//*[@id="borderBox"]/tbody/tr[{}]/td[3]'.format(i)).text
                 date.append(str(dateresult))
-                submitresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[4]'.format(i)).text
+                submitresult = driver.find_element_by_xpath('//*[@id="borderBox"]/tbody/tr[{}]/td[4]'.format(i)).text
                 submit.append(str(submitresult))
 
             dc = pd.DataFrame({'퀴즈제목': title,
@@ -156,7 +156,7 @@ class LecFinder:
         driver.get('https://ieilms.jbnu.ac.kr/quiz/quizList.jsp?group_id={}'.format(self.groupid_lec2))
 
         # 퀴즈 개수
-        elements = driver.find_elements_by_css_selector('#borderB > tbody > tr')
+        elements = driver.find_elements_by_css_selector('#borderBox > tbody > tr')
         elementcount = len(elements)
         if elementcount >= 1:
             # 퀴즈 리스트
@@ -164,11 +164,11 @@ class LecFinder:
             date = []
             submit = []
             for i in range(1, elementcount + 1):
-                titleresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[2]'.format(i)).text
+                titleresult = driver.find_element_by_xpath('//*[@id="borderBox"]/tbody/tr[{}]/td[2]'.format(i)).text
                 title.append(str(titleresult))
-                dateresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[3]'.format(i)).text
+                dateresult = driver.find_element_by_xpath('//*[@id="borderBox"]/tbody/tr[{}]/td[3]'.format(i)).text
                 date.append(str(dateresult))
-                submitresult = driver.find_element_by_xpath('//*[@id="borderB"]/tbody/tr[{}]/td[4]'.format(i)).text
+                submitresult = driver.find_element_by_xpath('//*[@id="borderBox"]/tbody/tr[{}]/td[4]'.format(i)).text
                 submit.append(str(submitresult))
 
             dc = pd.DataFrame({'퀴즈제목': title,
