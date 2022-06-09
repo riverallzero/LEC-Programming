@@ -39,7 +39,11 @@ class LecFinder:
 class NotionTelegramBot:
   
       def __init__(self):
-  
+            lecfinder.py 불러와 lf라고 지정
+            텔레그램 토큰 입력
+            텔레그램 아이디 입력
+            텔레그램 봇에 토큰 넘겨주기
+            텔레그램으로부터 업데이트를 받아오기
       def handler(self, update, context):
   
       def send_telegram_msg(self, report):
