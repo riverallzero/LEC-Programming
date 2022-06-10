@@ -137,3 +137,5 @@ https://yeo0.github.io/data/2018/09/24/5.-%EB%A1%9C%EA%B7%B8%EC%9D%B8%EC%9D%B4-%
 https://velog.io/@mjhuh263/TIL-23-HTML-XPATH-%EB%AC%B8%EB%B2%95%EA%B3%BC-selenium%EC%97%90-XPATH-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0
 <li>Html Css Selector 참고:
 https://www.nextree.co.kr/p8468/
+<li>isinstance 함수 참고:
+https://blockdmask.tistory.com/536
