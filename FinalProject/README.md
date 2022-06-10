@@ -90,7 +90,8 @@ class NotionTelegramBot:
             - 사용자가 보낸 메세지를 불러온다.
             - 사용자가 '할일'이라고 보내면 '로딩중∙∙∙'을 먼저 보낸다.
             - selenium의 webdriver를 이용하여 Chrome에서 전북대 LMS 사이트를 실행한다.
-            - 2초 뒤 아이디와 비밀번호를 입력할 칸을 xpath로 위치를 입력하고 lecfinder에서 입력한 아이디와 비밀번호를 입력한다.
+            - 2초 뒤 아이디와 비밀번호를 입력할 칸을 xpath로 위치를 입력하고 
+              lecfinder에서 입력한 아이디와 비밀번호를 입력한다.
             - 로그인버튼을 xpath로 위치를 입력하고 버튼을 클릭한다.
             - lecfinder에서 가져온 값들을 아래와 같이 저장한다.
             - report = lecfinder에서 가져온 report_result 값
