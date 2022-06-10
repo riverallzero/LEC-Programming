@@ -77,16 +77,37 @@ class LecFinder:
 <pre><code>
 class NotionTelegramBot:
       def __init__(self):
-            lecfinder.py 불러와 lf라고 지정
-            Lms Notion Bot 토큰
-            텔레그램 채팅 아이디 입력
-            텔레그램 봇에 토큰 넘겨주기
-            텔레그램으로부터 업데이트를 받아오기
+            - lecfinder.py 불러와 lf라고 지정한다.
+            - Lms Notion Bot 토큰
+            - 텔레그램 채팅 아이디 입력
+            - 텔레그램 봇에 토큰을 넘겨준다.
+            - 텔레그램으로부터 업데이트를 받아온다.
+            
       def handler(self, update, context):
-  
+            - 사용자가 보낸 메세지를 불러온다.
+            - 사용자가 '할일'이라고 보내면 '로딩중∙∙∙'을 먼저 보낸다.
+            - selenium의 webdriver를 이용하여 Chrome에서 전북대 LMS 사이트를 실행한다.
+            - 2초 뒤 아이디와 비밀번호를 입력할 칸을 xpath로 위치를 입력하고 lecfinder에서 입력한 아이디와 비밀번호를 입력한다.
+            - 로그인버튼을 xpath로 위치를 입력하고 버튼을 클릭한다.
+            - lecfinder에서 가져온 값들을 아래와 같이 저장한다.
+            - report = lecfinder에서 가져온 report_result 값
+            - video = lecfinder에서 가져온 video_result 값
+            - quiz = lecfinder에서 가져온 quiz_result 값
+            - 만약 report의 값이 '레포트는 없습니다.'라는 문자열일 때 텔레그램 봇을 이용해 '[레포트]완료'라고 사용자에게 전송한다.
+            - 아니라면 send_telegram_msg의 값과 이 강의 사이트 주소를 같이 전송한다.
+            - 위 두줄의 과정을 video와 quiz에도 똑같이 적용시킨다.
+            - 모두 하고 나면 사이트에서 로그아웃 버튼을 xpath로 위치를 찾고 클릭하며 로그아웃한다.
+            
       def send_telegram_msg(self, report):
+            - report의 반환값이 list일때 for문을 통해 사용자에게 메세지를 전송한다.
+            - list에는 과제제목과 기간 총 두가지의 요소가 포함되어 있다. 
+              이 요소를 video_report라고 지정하고 인덱스 슬라이싱을 통해 format하며 '[기한: {}]\n{}'이라고 전송한다.
+            - 반환값이 list가 아니라면 그대로 report의 반환값을 그대로 보내준다.
       
       def main():
+            - 위에서 만든 NotionTelegramBot()이라는 class를 notionbot이라고 저장한다.
+            - MessageHandler를 이용해 '할일'이라는 메세지를 받으면 echo대로 행동한다.
+            - notionbot의 규칙을 추가한다.
 </pre></code>   
 
 ***
