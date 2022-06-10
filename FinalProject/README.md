@@ -96,7 +96,8 @@ class NotionTelegramBot:
             - report = lecfinder에서 가져온 report_result 값
             - video = lecfinder에서 가져온 video_result 값
             - quiz = lecfinder에서 가져온 quiz_result 값
-            - 만약 report의 값이 '레포트는 없습니다.'라는 문자열일 때 텔레그램 봇을 이용해 '[레포트]완료'라고 사용자에게 전송한다.
+            - 만약 report의 값이 '레포트는 없습니다.'라는 문자열일 때 
+              텔레그램 봇을 이용해 '[레포트]완료'라고 사용자에게 전송한다.
             - 아니라면 send_telegram_msg의 값과 이 강의 사이트 주소를 같이 전송한다.
             - 위 두줄의 과정을 video와 quiz에도 똑같이 적용시킨다.
             - 모두 하고 나면 사이트에서 로그아웃 버튼을 xpath로 위치를 찾고 클릭하며 로그아웃한다.
