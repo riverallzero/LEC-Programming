@@ -23,7 +23,7 @@ class NotionTelegramBot:
         user_text = update.message.text
         if user_text == "할일":
             self.bot.send_message(chat_id=self.telegramid, text='로딩중∙∙∙')
-            driver = webdriver.Chrome(r'C:\Pych.Projects\Project\chromedriver.exe')
+            driver = webdriver.Chrome(r'chromedriver.exe 저장 위치')
             url = 'https://ieilms.jbnu.ac.kr/'
             driver.get(url)
             time.sleep(2)
