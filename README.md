@@ -114,7 +114,7 @@
 </details>
 
 <details>
-<summary>중간고사 <a href='https://github.com/riverallzero/LEC_2022_programming/tree/main/%EA%B3%BC%EC%A0%9C14'>(Go)</a></summary>
+<summary>중간고사:과제14 <a href='https://github.com/riverallzero/LEC_2022_programming/tree/main/%EA%B3%BC%EC%A0%9C14'>(Go)</a></summary>
 
   - 2022년 3월 기준 연령별 남녀 인구분포표 그리기 | <a href="https://github.com/riverallzero/LEC_2022_programming/blob/main/%EA%B3%BC%EC%A0%9C14/H14_population.py">H14_population.py</a><br>
       - Option1) 전북 전체, 전북 내 전체 시군구에 대한 그래프 저장
@@ -158,7 +158,7 @@
 </details>
 
 <details>
-<summary>기말고사 <a href='https://github.com/riverallzero/Personal_LmsNotion'>(Go)</a></summary>
+<summary>기말고사:프로젝트 <a href='https://github.com/riverallzero/Personal_LmsNotion'>(Go)</a></summary>
 
   - LMS로 강의를 들을 때 놓치는 영상, 레포트, 퀴즈를 알려주기위한 알림 봇
 </details>
