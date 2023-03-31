@@ -114,7 +114,7 @@
 </details>
 
 <details>
-<summary>과제14-중간고사 <a href='https://github.com/riverallzero/LEC_2022_programming/tree/main/%EA%B3%BC%EC%A0%9C14'>(Go)</a></summary>
+<summary>중간고사 <a href='https://github.com/riverallzero/LEC_2022_programming/tree/main/%EA%B3%BC%EC%A0%9C14'>(Go)</a></summary>
 
   - 2022년 3월 기준 연령별 남녀 인구분포표 그리기 | <a href="https://github.com/riverallzero/LEC_2022_programming/blob/main/%EA%B3%BC%EC%A0%9C14/H14_population.py">H14_population.py</a><br>
       - Option1) 전북 전체, 전북 내 전체 시군구에 대한 그래프 저장
@@ -155,4 +155,10 @@
 
   - GUI프로그램을 활용하여 카이사르 암호를 GUI로 구현 | <a href="https://github.com/riverallzero/LEC_2022_programming/blob/main/%EA%B3%BC%EC%A0%9C17/H1701.py">H1701.py</a><br>
   - 초성게임의 input()대신 gui_input()활용하여 구현 | <a href="https://github.com/riverallzero/LEC_2022_programming/blob/main/%EA%B3%BC%EC%A0%9C17/H1702.py">H1702.py</a><br>
+</details>
+
+<details>
+<summary>기말고사 <a href='https://github.com/riverallzero/Personal_LmsNotion'>(Go)</a></summary>
+
+  - LMS로 강의를 들을 때 놓치는 영상, 레포트, 퀴즈를 알려주기위한 알림 봇
 </details>
